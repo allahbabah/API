@@ -20,7 +20,6 @@ namespace project.Client
             Adress = Constants.adress;
             client = new HttpClient();
             client.BaseAddress = new Uri(Adress);
-
         }
         public async Task<List<PriceModel>> GetPrice(string cryptoCurrency)
         {
@@ -28,7 +27,7 @@ namespace project.Client
             var content = respoce.Content.ReadAsStringAsync().Result;
             var result = JsonConvert.DeserializeObject<List<PriceModel>>(content);
             //var result = (List<PriceModel>)JsonConvert.DeserializeObject();
-            result[0].Current_price = 50000;
+            result[0].Current_price = 96000;
             return result;
         }
         public async Task<MarcketPrice> GetMaketPrice(string market, string cryptoCurrency)
